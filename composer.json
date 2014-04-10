@@ -1,0 +1,34 @@
+{
+    "name": "phpx/proxy",
+    "description": "PHPX Proxy Library",
+    "type": "library",
+    "license": "MIT License",
+    "keywords": [
+        "phpx",
+        "extenstion",
+        "library",
+        "proxy",
+        "aop",
+        "open source"
+    ],
+    "homepage": "https://ninth.not-bad.org",
+    "authors" : [{
+        "name" : "Psyduck.Mans",
+        "email" : "t-bird.mans@hotmail.com",
+        "role" : "RD"
+    }],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "autoload" : {
+        "psr-4" : {
+            "PHPX\\Proxy\\" : "src/PHPX/Proxy"
+        }
+    },
+    "support" : {
+        "source" : "https://github.com/PsyduckMans/PHPX-Proxy",
+        "issues" : "https://github.com/PsyduckMans/PHPX-Proxy/issues",
+        "wiki" : "https://github.com/PsyduckMans/PHPX-Proxy/wiki",
+        "email" : "t-bird.mans@hotmail.com"
+    }
+}
