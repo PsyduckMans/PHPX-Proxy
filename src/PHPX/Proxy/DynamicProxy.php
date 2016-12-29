@@ -30,7 +30,8 @@ class DynamicProxy {
      * @return DynamicProxy
      */
     public static function createFrom($target) {
-        $proxy = new self();
+        $class = \get_called_class();
+        $proxy = new $class;
         $proxy->setTarget($target);
         return $proxy;
     }
@@ -52,11 +53,7 @@ class DynamicProxy {
                 throw new RuntimeException(get_class($this->target).'->'.$name.' can not public and static');
             }
         } else {
-            if($this->target instanceof self) {
-                $this->result = $this->target->__call($name, $arguments);
-            } else {
-                throw new RuntimeException(get_class($this->target).'->'.$name.' does not exist');
-            }
+			$this->result = $this->target->__call($name, $arguments);
         }
         $this->__postCall($name, $arguments);
         return $this->result;
